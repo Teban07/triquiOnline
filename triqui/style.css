@@ -1,0 +1,346 @@
+/* ══════════════════════════════════════
+   TRIQUI — Estilos principales
+   Paleta: Azul como color principal
+   ══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-light:   #E6F1FB;
+    --blue-mid:     #378ADD;
+    --blue-strong:  #185FA5;
+    --blue-dark:    #0C447C;
+    --blue-darkest: #042C53;
+
+    --white:        #FFFFFF;
+    --off-white:    #F4F6FA;
+    --gray-light:   #D3D1C7;
+    --gray-mid:     #888780;
+    --gray-dark:    #2C2C2A;
+
+    --radius-sm:  8px;
+    --radius-md:  14px;
+    --radius-lg:  22px;
+
+    --shadow-soft: 0 4px 24px rgba(24, 95, 165, 0.13);
+    --shadow-tile: 0 2px 12px rgba(24, 95, 165, 0.10);
+}
+
+/* ── Base ── */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--off-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse 70% 50% at 15% 10%, rgba(55, 138, 221, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 85% 85%, rgba(24, 95, 165, 0.09) 0%, transparent 60%),
+        var(--off-white);
+    padding: 2rem 1rem;
+}
+
+/* ── Utilidad ── */
+.hide { display: none !important; }
+
+/* ══════════════════════════════════════
+   TÍTULO
+   ══════════════════════════════════════ */
+.title-text {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--blue-dark);
+    text-align: center;
+    margin-bottom: 0.2em;
+    line-height: 1;
+}
+
+/* ══════════════════════════════════════
+   PANTALLA DE SELECCIÓN DE MODO
+   ══════════════════════════════════════ */
+#modeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--blue-light);
+    box-shadow: var(--shadow-soft);
+    padding: 3rem 2.5rem 2.8rem;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+}
+
+.mode-subtitle {
+    font-size: 1.05rem;
+    color: var(--gray-mid);
+    font-weight: 400;
+    text-align: center;
+    margin-top: -1rem;
+}
+
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.mode-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--blue-mid);
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+
+.mode-btn:hover {
+    background: var(--blue-light);
+    box-shadow: 0 4px 18px rgba(55, 138, 221, 0.18);
+    transform: translateY(-2px);
+}
+
+.mode-btn:active {
+    transform: translateY(0);
+}
+
+.mode-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.mode-desc {
+    font-size: 0.78rem;
+    color: var(--gray-mid);
+    font-weight: 400;
+}
+
+/* ══════════════════════════════════════
+   PANTALLA DE JUEGO
+   ══════════════════════════════════════ */
+#gameScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--blue-light);
+    box-shadow: var(--shadow-soft);
+    padding: 2.4rem 2rem 2rem;
+    min-width: 340px;
+    max-width: 440px;
+    width: 100%;
+}
+
+/* ── Marcador ── */
+.score-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    background: var(--blue-light);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 2rem;
+    width: 100%;
+}
+
+.score-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.score-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-mid);
+    font-weight: 600;
+}
+
+.score-val {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.score-divider {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-mid);
+    letter-spacing: 0.1em;
+    padding: 0 0.5rem;
+}
+
+/* ── Indicador de turno ── */
+.display {
+    font-size: 0.92rem;
+    color: var(--gray-mid);
+    font-weight: 400;
+    text-align: center;
+}
+
+.display-player {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ── Colores de jugador ── */
+.playerX { color: var(--blue-strong); }
+.playerO { color: var(--gray-dark); }
+
+/* ── Tablero ── */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0.5rem;
+}
+
+.tile {
+    width: 86px;
+    height: 86px;
+    border-radius: var(--radius-md);
+    background: var(--off-white);
+    border: 1.5px solid var(--blue-light);
+    box-shadow: var(--shadow-tile);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--gray-light);
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    user-select: none;
+}
+
+.tile:hover:not(.taken) {
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
+    transform: scale(1.04);
+}
+
+.tile.taken {
+    cursor: default;
+}
+
+.tile.playerX {
+    color: var(--blue-strong);
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
+}
+
+.tile.playerO {
+    color: var(--gray-dark);
+    background: var(--off-white);
+    border-color: var(--gray-light);
+}
+
+.tile.win-highlight {
+    background: var(--blue-mid);
+    border-color: var(--blue-dark);
+    color: var(--white);
+    transform: scale(1.06);
+}
+
+/* ── Anunciador ── */
+.announcer {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--blue-strong);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.announcer.draw {
+    background: var(--gray-mid);
+}
+
+/* ── Botón de reinicio ── */
+.controls {
+    width: 100%;
+}
+
+#reset {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--blue-strong);
+    background: var(--blue-strong);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 0.16s, transform 0.1s, box-shadow 0.16s;
+}
+
+#reset:hover {
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
+    box-shadow: 0 4px 18px rgba(12, 68, 124, 0.22);
+    transform: translateY(-1px);
+}
+
+#reset:active {
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVO
+   ══════════════════════════════════════ */
+@media (max-width: 480px) {
+    #modeScreen, #gameScreen {
+        padding: 2rem 1.2rem 1.8rem;
+        min-width: unset;
+    }
+
+    .tile {
+        width: 72px;
+        height: 72px;
+        font-size: 1.8rem;
+    }
+
+    .score-board {
+        padding: 0.7rem 1rem;
+    }
+}
